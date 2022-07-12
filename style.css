@@ -1,0 +1,393 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  width: 90%;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #e4e4e4;
+  background-color: #ffffff;
+  width: 100%;
+}
+
+main {
+  margin-top: 4rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  height: 4.5rem;
+  align-items: center;
+  width: 100%;
+}
+
+nav.show .menu {
+  opacity: 1;
+  visibility: visible;
+  background: #f0cd06;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  position: fixed;
+}
+
+nav .menu {
+  opacity: 0;
+  visibility: hidden;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font: 400 1.2rem 'Abel', 'sans-serif';
+  background: var(--body-color);
+  color: var(--text-color);
+}
+
+.logo h1 {
+  font: 1000 1.5rem 'Fredoka One', sans-serif;
+  color: #c20808;
+}
+
+.logo span {
+  color: #fbd204;
+}
+
+.title {
+  font: 400 2rem 'Fredoka One', 'sans-serif';
+  color: var(--title-color);
+}
+
+section {
+  padding: 1.5rem 0;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem; /** espaço vertical**/
+}
+
+#home .texto {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  text-align: center;
+}
+
+#home .texto h1 {
+  margin-bottom: 1rem;
+}
+
+#home .texto p {
+  margin-bottom: 1.5rem;
+}
+
+#home .imagem {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.button {
+  background-color: #c20808;
+  color: var(--text-color-light);
+  display: inline-flex;
+  height: 3.5rem;
+  align-items: center;
+  padding: 0 2rem;
+  font: 600 1rem 'Abel', sans-serif;
+  transform: background 0.3s;
+}
+
+.button:hover {
+  background: #dd1607;
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(
+    270deg,
+    hsla(0, 100%, 43%, 1),
+    hsla(54, 100%, 50%, 1)
+  );
+}
+
+nav ul li {
+  text-align: center;
+}
+nav.show ul.grid {
+  gap: 4rem;
+}
+nav.show .menu {
+  display: grid;
+  place-content: center; /**centralizar conteúdo do menu no display**/
+}
+ul {
+  list-style: none;
+}
+nav ul li a:hover {
+  /**hover = muda de cor quando passa com o cursor em cima do link**/
+  color: var(--base-color);
+}
+nav ul li a {
+  transition: color 0.3s;
+  position: relative;
+}
+nav ul li a:hover::after {
+  /**depois que estiver sobre**/
+  content: '';
+  width: 100%;
+  height: 3px;
+  background: #c20808;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: 0.2s;
+}
+
+:root {
+  --hue: 159;
+  /* HSL color mode */
+  --base-color: #c20808;
+  --base-color-second: hsl(var(--hue) 65% 88%);
+  --base-color-alt: hsl(var(--hue) 57% 53%);
+  --title-color: hsl(var(--hue) 41% 10%);
+  --text-color: hsl(0 0% 46%);
+  --text-color-light: hsl(0 0% 98%);
+  --body-color: rgb(250, 250, 250);
+}
+nav .icon-cross {
+  visibility: hidden;
+  opacity: 0;
+
+  position: absolute;
+  right: 1.5rem;
+}
+
+nav.show div.icon-cross {
+  visibility: visible;
+  opacity: 1;
+}
+
+.toggle {
+  font-size: 1.5rem;
+  color: var(--base-color);
+  cursor: pointer;
+}
+#about .texto {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  text-align: center;
+}
+
+#about .texto h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#about .texto p {
+  font-family: 'Abel';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 26px;
+  text-align: justify;
+  margin-bottom: 1.5rem;
+}
+
+#about .imagem {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.justify-text {
+  text-align: center;
+}
+
+.card {
+  padding: 3.6rem 2rem;
+  box-shadow: var(--base-color);
+  border-bottom: 0.25rem solid var(--base-color);
+  border-radius: 0.25rem 0.25rem 0 0;
+  text-align: center;
+}
+.card i {
+  display: block;
+  margin-bottom: 1.5rem;
+  font-size: 6rem;
+  color: #fbd204;
+}
+
+#services .title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 45px;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.section .title {
+  margin-bottom: 1rem;
+}
+
+.section .subtitle {
+  font-size: var(--subtitle-font-size);
+}
+:root {
+  --title-font-size: 2.25rem;
+  --subtitle-font-size: 1.125rem;
+}
+#contact {
+  text-align: center;
+}
+#contact .texto h2 {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  text-align: center;
+}
+#contact .grid {
+  gap: 4rem;
+}
+#contact .texto p {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+#contact .button {
+  margin-top: 1.5rem;
+}
+
+#contact .button i {
+  font-size: 1.5rem;
+  margin-right: 0.675rem;
+  font-family: 'Abel';
+  font-style: normal;
+  text-align: center;
+}
+
+#contact ul.grid {
+  gap: 1.5rem;
+}
+#contact ul li i {
+  color: var(--base-color);
+  font-size: 1.5rem;
+  margin-right: 0.625rem;
+}
+#contact .align_button {
+  text-align: center;
+}
+#contact .container {
+  align-items: center;
+  justify-content: space-between;
+}
+#contact .texto {
+  max-width: 25rem;
+}
+
+#contact .align_button {
+  text-align: center;
+}
+#contact .title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 45px;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+#depoimentos .grid {
+  gap: 1.5rem;
+}
+#depoimentos .texto h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+#about .texto {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  text-align: center;
+}
+
+#depoimentos .texto p {
+  font-family: 'Abel';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 26px;
+  text-align: justify;
+  margin-bottom: 1.5rem;
+}
+#depoimentos .texto {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  text-align: center;
+}
+#depoimentos .imagem {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+#depoimentos .texto p {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  text-align: justify;
+}
+
+#about .imagem {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+footer {
+  background: #f0cd06;
+  padding: 1.5rem 0;
+}
+
+footer .logo {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font: 700 1.5rem 'Fredoka One', 'sans-serif';
+  color: var(--base-color);
+}
+
+footer .brand p {
+  color: var(--text-color-light);
+  margin-bottom: 0.75rem;
+}
+
+footer i {
+  font-size: 1.5rem;
+  color: var(--base-color);
+}
+
+footer .social a {
+  margin-right: 2rem;
+}
+
+footer .container {
+  align-items: center;
+}
+
+footer .logo span {
+  color: var(--base-color);
+}
